@@ -1,0 +1,177 @@
+[2025-01-08 09:12:18,624] [panoptic.py:273] [INFO] running sam!
+[2025-01-08 09:12:22,846] [panoptic.py:289] [INFO] Processing '/workspaces/FoodSAM/examples/omelette.jpg'...
+[2025-01-08 09:12:25,940] [panoptic.py:302] [INFO] sam done!
+
+[2025-01-08 09:12:25,940] [panoptic.py:304] [INFO] running semantic seg model!
+[2025-01-08 09:12:27,651] [panoptic.py:318] [INFO] semantic predict done!
+
+[2025-01-08 09:12:27,651] [panoptic.py:320] [INFO] running object detection model
+[2025-01-08 09:12:27,656] [config.py:69] [WARNING] Loading config ./configs/Base-CRCNN-COCO.yaml with yaml.unsafe_load. Your machine may be at risk if the file contains malicious content.
+[2025-01-08 09:12:28,261] [detection_checkpoint.py:38] [INFO] [DetectionCheckpointer] Loading from ./ckpts/Unified_learned_OCIM_RS200_6x+2x.pth ...
+[2025-01-08 09:12:28,261] [checkpoint.py:150] [INFO] [Checkpointer] Loading from ./ckpts/Unified_learned_OCIM_RS200_6x+2x.pth ...
+[2025-01-08 09:12:28,471] [checkpoint.py:350] [WARNING] Some model parameters or buffers are not found in the checkpoint:
+[34mbackbone.bottom_up.res2.0.conv1.norm.num_batches_tracked[0m
+[34mbackbone.bottom_up.res2.0.conv2.bn0.num_batches_tracked[0m
+[34mbackbone.bottom_up.res2.0.conv2.bn1.num_batches_tracked[0m
+[34mbackbone.bottom_up.res2.0.conv3.norm.num_batches_tracked[0m
+[34mbackbone.bottom_up.res2.0.shortcut.norm.num_batches_tracked[0m
+[34mbackbone.bottom_up.res2.1.conv1.norm.num_batches_tracked[0m
+[34mbackbone.bottom_up.res2.1.conv2.bn0.num_batches_tracked[0m
+[34mbackbone.bottom_up.res2.1.conv2.bn1.num_batches_tracked[0m
+[34mbackbone.bottom_up.res2.1.conv3.norm.num_batches_tracked[0m
+[34mbackbone.bottom_up.res2.2.conv1.norm.num_batches_tracked[0m
+[34mbackbone.bottom_up.res2.2.conv2.bn0.num_batches_tracked[0m
+[34mbackbone.bottom_up.res2.2.conv2.bn1.num_batches_tracked[0m
+[34mbackbone.bottom_up.res2.2.conv3.norm.num_batches_tracked[0m
+[34mbackbone.bottom_up.stem.conv1_1.norm.num_batches_tracked[0m
+[34mbackbone.bottom_up.stem.conv1_2.norm.num_batches_tracked[0m
+[34mbackbone.bottom_up.stem.conv1_3.norm.num_batches_tracked[0m
+[2025-01-08 09:12:31,705] [object_detection.py:110] [INFO] /workspaces/FoodSAM/examples/omelette.jpg: detected 16 instances in 3.20s
+[2025-01-08 09:12:31,707] [panoptic.py:322] [INFO] object detection done!
+
+[2025-01-08 09:12:31,707] [panoptic.py:324] [INFO] panoramic segmentation!
+[2025-01-08 09:12:31,744] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/0 assign label: [ 70, potato, 1.00, 0.0149 ]
+[2025-01-08 09:12:31,749] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/1 assign label: [ 70, potato, 1.00, 0.0252 ]
+[2025-01-08 09:12:31,753] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/2 assign label: [ 70, potato, 0.97, 0.0216 ]
+[2025-01-08 09:12:31,759] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/3 assign label: [ 70, potato, 0.99, 0.0282 ]
+[2025-01-08 09:12:31,761] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/4 assign label: [ 70, potato, 0.99, 0.0078 ]
+[2025-01-08 09:12:31,761] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/5 assign label: [ 31, cherry, 0.57, 0.0031 ]
+[2025-01-08 09:12:31,764] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/6 assign label: [ 70, potato, 0.99, 0.0131 ]
+[2025-01-08 09:12:31,833] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/7 assign label: [ 0, background, 1.00, 0.2958 ]
+[2025-01-08 09:12:31,834] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/8 assign label: [ 47, pork, 0.62, 0.0053 ]
+[2025-01-08 09:12:31,835] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/9 assign label: [ 73, tomato, 0.69, 0.0058 ]
+[2025-01-08 09:12:31,836] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/10 assign label: [ 73, tomato, 0.65, 0.0044 ]
+[2025-01-08 09:12:31,837] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/11 assign label: [ 73, tomato, 0.55, 0.0050 ]
+[2025-01-08 09:12:31,838] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/12 assign label: [ 47, pork, 0.46, 0.0026 ]
+[2025-01-08 09:12:31,839] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/13 assign label: [ 0, background, 1.00, 0.0080 ]
+[2025-01-08 09:12:31,844] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/14 assign label: [ 70, potato, 1.00, 0.0255 ]
+[2025-01-08 09:12:31,845] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/15 assign label: [ 73, tomato, 0.92, 0.0038 ]
+[2025-01-08 09:12:31,846] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/16 assign label: [ 67, pie, 1.00, 0.0033 ]
+[2025-01-08 09:12:31,850] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/17 assign label: [ 70, potato, 0.97, 0.0223 ]
+[2025-01-08 09:12:31,851] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/18 assign label: [ 67, pie, 0.63, 0.0054 ]
+[2025-01-08 09:12:31,852] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/19 assign label: [ 31, cherry, 0.55, 0.0018 ]
+[2025-01-08 09:12:31,852] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/20 assign label: [ 0, background, 1.00, 0.0012 ]
+[2025-01-08 09:12:31,853] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/21 assign label: [ 0, background, 1.00, 0.0033 ]
+[2025-01-08 09:12:31,854] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/22 assign label: [ 73, tomato, 0.54, 0.0049 ]
+[2025-01-08 09:12:31,855] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/23 assign label: [ 47, pork, 0.40, 0.0054 ]
+[2025-01-08 09:12:31,855] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/24 assign label: [ 67, pie, 1.00, 0.0009 ]
+[2025-01-08 09:12:31,856] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/25 assign label: [ 73, tomato, 0.91, 0.0065 ]
+[2025-01-08 09:12:31,857] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/26 assign label: [ 67, pie, 1.00, 0.0039 ]
+[2025-01-08 09:12:31,859] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/27 assign label: [ 73, tomato, 0.70, 0.0073 ]
+[2025-01-08 09:12:31,859] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/28 assign label: [ 67, pie, 1.00, 0.0008 ]
+[2025-01-08 09:12:31,859] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/29 assign label: [ 67, pie, 1.00, 0.0006 ]
+[2025-01-08 09:12:31,860] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/30 assign label: [ 49, sausage, 0.65, 0.0030 ]
+[2025-01-08 09:12:31,866] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/31 assign label: [ 70, potato, 0.99, 0.0284 ]
+[2025-01-08 09:12:31,866] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/32 assign label: [ 67, pie, 1.00, 0.0016 ]
+[2025-01-08 09:12:31,866] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/33 assign label: [ 67, pie, 0.70, 0.0014 ]
+[2025-01-08 09:12:31,867] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/34 assign label: [ 67, pie, 1.00, 0.0008 ]
+[2025-01-08 09:12:31,867] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/35 assign label: [ 70, potato, 0.71, 0.0007 ]
+[2025-01-08 09:12:31,867] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/36 assign label: [ 31, cherry, 0.60, 0.0013 ]
+[2025-01-08 09:12:31,868] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/37 assign label: [ 67, pie, 0.51, 0.0043 ]
+[2025-01-08 09:12:31,869] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/38 assign label: [ 67, pie, 1.00, 0.0007 ]
+[2025-01-08 09:12:31,869] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/39 assign label: [ 0, background, 1.00, 0.0004 ]
+[2025-01-08 09:12:31,869] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/40 assign label: [ 47, pork, 0.77, 0.0027 ]
+[2025-01-08 09:12:31,870] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/41 assign label: [ 67, pie, 1.00, 0.0008 ]
+[2025-01-08 09:12:31,870] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/42 assign label: [ 0, background, 1.00, 0.0004 ]
+[2025-01-08 09:12:31,870] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/43 assign label: [ 70, potato, 1.00, 0.0005 ]
+[2025-01-08 09:12:31,877] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/44 assign label: [ 70, potato, 1.00, 0.0329 ]
+[2025-01-08 09:12:31,877] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/45 assign label: [ 67, pie, 0.93, 0.0011 ]
+[2025-01-08 09:12:31,877] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/46 assign label: [ 67, pie, 1.00, 0.0007 ]
+[2025-01-08 09:12:31,878] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/47 assign label: [ 67, pie, 0.94, 0.0008 ]
+[2025-01-08 09:12:31,883] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/48 assign label: [ 70, potato, 1.00, 0.0279 ]
+[2025-01-08 09:12:31,884] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/49 assign label: [ 73, tomato, 0.76, 0.0022 ]
+[2025-01-08 09:12:31,884] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/50 assign label: [ 67, pie, 1.00, 0.0011 ]
+[2025-01-08 09:12:31,885] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/51 assign label: [ 67, pie, 0.81, 0.0029 ]
+[2025-01-08 09:12:31,885] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/52 assign label: [ 47, pork, 0.72, 0.0030 ]
+[2025-01-08 09:12:31,886] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/53 assign label: [ 67, pie, 0.46, 0.0020 ]
+[2025-01-08 09:12:31,887] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/54 assign label: [ 73, tomato, 0.79, 0.0086 ]
+[2025-01-08 09:12:31,888] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/55 assign label: [ 67, pie, 1.00, 0.0007 ]
+[2025-01-08 09:12:31,896] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/56 assign label: [ 70, potato, 1.00, 0.0005 ]
+[2025-01-08 09:12:31,897] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/57 assign label: [ 73, tomato, 0.59, 0.0015 ]
+[2025-01-08 09:12:31,897] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/58 assign label: [ 67, pie, 0.81, 0.0003 ]
+[2025-01-08 09:12:31,897] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/59 assign label: [ 67, pie, 0.58, 0.0019 ]
+[2025-01-08 09:12:31,898] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/60 assign label: [ 67, pie, 1.00, 0.0004 ]
+[2025-01-08 09:12:31,898] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/61 assign label: [ 67, pie, 1.00, 0.0004 ]
+[2025-01-08 09:12:31,898] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/62 assign label: [ 70, potato, 1.00, 0.0003 ]
+[2025-01-08 09:12:31,899] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/63 assign label: [ 73, tomato, 0.75, 0.0024 ]
+[2025-01-08 09:12:31,899] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/64 assign label: [ 70, potato, 1.00, 0.0003 ]
+[2025-01-08 09:12:31,899] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/65 assign label: [ 67, pie, 0.99, 0.0002 ]
+[2025-01-08 09:12:31,899] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/66 assign label: [ 67, pie, 1.00, 0.0006 ]
+[2025-01-08 09:12:31,900] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/67 assign label: [ 73, tomato, 0.95, 0.0025 ]
+[2025-01-08 09:12:31,900] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/68 assign label: [ 67, pie, 1.00, 0.0008 ]
+[2025-01-08 09:12:31,901] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/69 assign label: [ 67, pie, 1.00, 0.0045 ]
+[2025-01-08 09:12:31,903] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/70 assign label: [ 0, background, 1.00, 0.0113 ]
+[2025-01-08 09:12:31,903] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/71 assign label: [ 67, pie, 1.00, 0.0001 ]
+[2025-01-08 09:12:31,904] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/72 assign label: [ 70, potato, 1.00, 0.0003 ]
+[2025-01-08 09:12:31,905] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/73 assign label: [ 73, tomato, 0.82, 0.0051 ]
+[2025-01-08 09:12:31,905] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/74 assign label: [ 67, pie, 1.00, 0.0002 ]
+[2025-01-08 09:12:31,905] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/75 assign label: [ 0, background, 0.93, 0.0002 ]
+[2025-01-08 09:12:31,906] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/76 assign label: [ 67, pie, 1.00, 0.0003 ]
+[2025-01-08 09:12:31,906] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/77 assign label: [ 70, potato, 1.00, 0.0006 ]
+[2025-01-08 09:12:31,906] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/78 assign label: [ 67, pie, 1.00, 0.0005 ]
+[2025-01-08 09:12:31,906] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/79 assign label: [ 0, background, 1.00, 0.0002 ]
+[2025-01-08 09:12:31,907] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/80 assign label: [ 67, pie, 0.89, 0.0016 ]
+[2025-01-08 09:12:31,907] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/81 assign label: [ 0, background, 1.00, 0.0001 ]
+[2025-01-08 09:12:31,907] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/82 assign label: [ 67, pie, 1.00, 0.0002 ]
+[2025-01-08 09:12:31,907] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/83 assign label: [ 0, background, 1.00, 0.0001 ]
+[2025-01-08 09:12:31,908] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/84 assign label: [ 67, pie, 1.00, 0.0003 ]
+[2025-01-08 09:12:31,908] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/85 assign label: [ 67, pie, 1.00, 0.0001 ]
+[2025-01-08 09:12:31,908] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/86 assign label: [ 67, pie, 1.00, 0.0005 ]
+[2025-01-08 09:12:31,910] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/87 assign label: [ 49, sausage, 0.57, 0.0088 ]
+[2025-01-08 09:12:31,910] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/88 assign label: [ 0, background, 0.96, 0.0004 ]
+[2025-01-08 09:12:31,910] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/89 assign label: [ 67, pie, 1.00, 0.0002 ]
+[2025-01-08 09:12:31,911] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/90 assign label: [ 0, background, 1.00, 0.0001 ]
+[2025-01-08 09:12:31,911] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/91 assign label: [ 0, background, 1.00, 0.0002 ]
+[2025-01-08 09:12:31,911] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/92 assign label: [ 47, pork, 0.52, 0.0031 ]
+[2025-01-08 09:12:31,912] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/93 assign label: [ 67, pie, 1.00, 0.0002 ]
+[2025-01-08 09:12:31,912] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/94 assign label: [ 73, tomato, 0.72, 0.0033 ]
+[2025-01-08 09:12:31,913] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/95 assign label: [ 67, pie, 0.95, 0.0006 ]
+[2025-01-08 09:12:31,913] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/96 assign label: [ 67, pie, 0.60, 0.0012 ]
+[2025-01-08 09:12:31,913] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/97 assign label: [ 67, pie, 0.69, 0.0006 ]
+[2025-01-08 09:12:31,914] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/98 assign label: [ 67, pie, 1.00, 0.0002 ]
+[2025-01-08 09:12:31,914] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/99 assign label: [ 67, pie, 1.00, 0.0006 ]
+[2025-01-08 09:12:31,914] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/100 assign label: [ 67, pie, 0.67, 0.0016 ]
+[2025-01-08 09:12:31,914] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/101 assign label: [ 67, pie, 1.00, 0.0004 ]
+[2025-01-08 09:12:31,915] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/102 assign label: [ 67, pie, 1.00, 0.0003 ]
+[2025-01-08 09:12:31,915] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/103 assign label: [ 67, pie, 1.00, 0.0006 ]
+[2025-01-08 09:12:31,915] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/104 assign label: [ 0, background, 0.61, 0.0007 ]
+[2025-01-08 09:12:31,915] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/105 assign label: [ 67, pie, 1.00, 0.0001 ]
+[2025-01-08 09:12:31,916] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/106 assign label: [ 0, background, 1.00, 0.0001 ]
+[2025-01-08 09:12:31,916] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/107 assign label: [ 67, pie, 0.85, 0.0004 ]
+[2025-01-08 09:12:31,916] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/108 assign label: [ 0, background, 1.00, 0.0001 ]
+[2025-01-08 09:12:31,917] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/109 assign label: [ 49, sausage, 0.54, 0.0055 ]
+[2025-01-08 09:12:31,917] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/110 assign label: [ 0, background, 1.00, 0.0001 ]
+[2025-01-08 09:12:31,918] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/111 assign label: [ 67, pie, 1.00, 0.0002 ]
+[2025-01-08 09:12:31,918] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/112 assign label: [ 67, pie, 1.00, 0.0005 ]
+[2025-01-08 09:12:31,918] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/113 assign label: [ 67, pie, 1.00, 0.0001 ]
+[2025-01-08 09:12:31,919] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/114 assign label: [ 67, pie, 1.00, 0.0053 ]
+[2025-01-08 09:12:31,919] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/115 assign label: [ 70, potato, 0.55, 0.0003 ]
+[2025-01-08 09:12:31,920] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/116 assign label: [ 0, background, 1.00, 0.0003 ]
+[2025-01-08 09:12:31,920] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/117 assign label: [ 67, pie, 1.00, 0.0001 ]
+[2025-01-08 09:12:31,920] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/118 assign label: [ 67, pie, 1.00, 0.0001 ]
+[2025-01-08 09:12:31,920] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/119 assign label: [ 0, background, 1.00, 0.0001 ]
+[2025-01-08 09:12:31,921] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/120 assign label: [ 49, sausage, 0.55, 0.0033 ]
+[2025-01-08 09:12:31,921] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/121 assign label: [ 67, pie, 1.00, 0.0001 ]
+[2025-01-08 09:12:31,921] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/122 assign label: [ 0, background, 1.00, 0.0001 ]
+[2025-01-08 09:12:31,921] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/123 assign label: [ 67, pie, 1.00, 0.0005 ]
+[2025-01-08 09:12:31,922] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/124 assign label: [ 67, pie, 1.00, 0.0003 ]
+[2025-01-08 09:12:31,922] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/125 assign label: [ 70, potato, 1.00, 0.0002 ]
+[2025-01-08 09:12:31,922] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/126 assign label: [ 0, background, 1.00, 0.0002 ]
+[2025-01-08 09:12:31,922] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/127 assign label: [ 67, pie, 1.00, 0.0001 ]
+[2025-01-08 09:12:31,923] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/128 assign label: [ 0, background, 1.00, 0.0001 ]
+[2025-01-08 09:12:31,923] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/129 assign label: [ 0, background, 1.00, 0.0001 ]
+[2025-01-08 09:12:31,923] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/130 assign label: [ 67, pie, 1.00, 0.0001 ]
+[2025-01-08 09:12:31,923] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/131 assign label: [ 73, tomato, 1.00, 0.0005 ]
+[2025-01-08 09:12:31,923] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/132 assign label: [ 0, background, 0.93, 0.0002 ]
+[2025-01-08 09:12:31,924] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/133 assign label: [ 0, background, 1.00, 0.0003 ]
+[2025-01-08 09:12:31,924] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/134 assign label: [ 0, background, 1.00, 0.0003 ]
+[2025-01-08 09:12:31,924] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/135 assign label: [ 70, potato, 1.00, 0.0003 ]
+[2025-01-08 09:12:31,924] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/136 assign label: [ 0, background, 1.00, 0.0000 ]
+[2025-01-08 09:12:31,925] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/137 assign label: [ 70, potato, 0.99, 0.0007 ]
+[2025-01-08 09:12:31,925] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/138 assign label: [ 67, pie, 1.00, 0.0002 ]
+[2025-01-08 09:12:31,925] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/139 assign label: [ 67, pie, 1.00, 0.0001 ]
+[2025-01-08 09:12:31,925] [enhance_semantic_masks.py:28] [INFO] /workspaces/FoodSAM/examples/panoptic/omelette/sam_mask/140 assign label: [ 67, pie, 1.00, 0.0003 ]
+[2025-01-08 09:12:32,389] [panoptic.py:334] [INFO] panoramic segmentation done!
+
+[2025-01-08 09:12:32,389] [panoptic.py:336] [INFO] The results saved in /workspaces/FoodSAM/examples/panoptic!
+
