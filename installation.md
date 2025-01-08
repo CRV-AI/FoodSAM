@@ -35,7 +35,22 @@ f. other requirements
 pip install -r requirement.txt
 ```
 
-e. Finally download three checkpoints, and move them to "ckpts/" folder as described.
+g. when error Cargo/Rust
+```bash
+curl https://sh.rustup.rs -sSf | sh
+export PATH="$HOME/.cargo/bin:$PATH"
+source ~/.profile
+source ~/.cargo/env
+```
+ref: https://stackoverflow.com/questions/71696582/issue-with-installing-packages-with-pip-cargo-the-rust-package-manager-is-no
+
+h. when error `ImportError: libGL.so.1` (cv2)
+```bash
+apt-get update && apt-get install -y python3-opencv
+```
+ref: https://stackoverflow.com/questions/55313610/importerror-libgl-so-1-cannot-open-shared-object-file-no-such-file-or-directo
+
+i. Finally download three checkpoints, and move them to "ckpts/" folder as described.
 
 [SAM-vit-h](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth)
 
