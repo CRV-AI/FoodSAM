@@ -24,19 +24,19 @@ parser = argparse.ArgumentParser(
 parser.add_argument(
     "--data_root",
     type=str,
-    default='dataset/FoodSeg103/Images',
+    default="dataset/FoodSeg103/Images",
     help="Path to folder of images and masks.",
 )
 parser.add_argument(
     "--img_dir",
     type=str,
-    default='img_dir/test',
+    default="img_dir/test",
     help="Path to img.",
 )
 parser.add_argument(
     "--ann_dir",
     type=str,
-    default='ann_dir/test',
+    default="ann_dir/test",
     help="Path to ann.",
 )
 
@@ -49,44 +49,38 @@ parser.add_argument(
 parser.add_argument(
     "--output",
     type=str,
-    default='Output/Panoramic_Results',
-    help=(
-        "Path to the directory where masks will be output. Output will be a folder"
-    ),
+    default="Output/Panoramic_Results",
+    help=("Path to the directory where masks will be output. Output will be a folder"),
 )
 parser.add_argument(
     "--SAM_checkpoint",
     type=str,
-    default="ckpts/sam_vit_h_4b8939.pth",
+    default="./ckpts/sam_vit_h_4b8939.pth",
     help="The path to the SAM checkpoint to use for mask generation.",
 )
-parser.add_argument('--semantic_config', default="configs/SETR_MLA_768x768_80k_base.py", help='test config file path of mmseg')
-parser.add_argument('--semantic_checkpoint', default="ckpts/SETR_MLA/iter_80000.pth", help='checkpoint file of mmseg')
+parser.add_argument(
+    "--semantic_config", default="./configs/SETR_MLA_768x768_80k_base.py", help="test config file path of mmseg"
+)
+parser.add_argument("--semantic_checkpoint", default="./ckpts/SETR_MLA/iter_80000.pth", help="checkpoint file of mmseg")
 parser.add_argument(
     "--model-type",
     type=str,
-    default='vit_h',
+    default="vit_h",
     help="The type of model to load, in ['default', 'vit_h', 'vit_l', 'vit_b']",
 )
 
 parser.add_argument("--device", type=str, default="cuda", help="The device to run generation on.")
 
 
-parser.add_argument(
-    '--aug-test', action='store_true', help='Use Flip and Multi scale aug')
+parser.add_argument("--aug-test", action="store_true", help="Use Flip and Multi scale aug")
 
-parser.add_argument(
-    '--options', nargs='+', action=DictAction, help='custom options')
-parser.add_argument(
-    '--eval-options',
-    nargs='+',
-    action=DictAction,
-    help='custom options for evaluation')
-parser.add_argument('--color_list_path', type=str, default="FoodSAM/FoodSAM_tools/color_list.npy")
+parser.add_argument("--options", nargs="+", action=DictAction, help="custom options")
+parser.add_argument("--eval-options", nargs="+", action=DictAction, help="custom options for evaluation")
+parser.add_argument("--color_list_path", type=str, default="./FoodSAM/FoodSAM_tools/color_list.npy")
 
 parser.add_argument(
     "--category_txt",
-    default="FoodSAM/FoodSAM_tools/category_id_files/foodseg103_category_id.txt" ,
+    default="./FoodSAM/FoodSAM_tools/category_id_files/foodseg103_category_id.txt",
 )
 parser.add_argument(
     "--num_class",
@@ -94,23 +88,23 @@ parser.add_argument(
 )
 parser.add_argument(
     "--area_thr",
-    default=0 ,
+    default=0,
 )
 parser.add_argument(
     "--ratio_thr",
-    default=0.5 ,
+    default=0.5,
 )
 parser.add_argument(
     "--top_k",
-    default=80 ,
+    default=80,
 )
 
 parser.add_argument(
     "--detection_config",
-    default="configs/Unified_learned_OCIM_RS200_6x+2x.yaml",
+    default="./configs/Unified_learned_OCIM_RS200_6x+2x.yaml",
     metavar="FILE",
     help="path to config file",
-    )
+)
 parser.add_argument(
     "--confidence-threshold",
     type=float,
@@ -120,7 +114,7 @@ parser.add_argument(
 parser.add_argument(
     "--opts",
     help="Modify config options using the command-line 'KEY VALUE' pairs",
-    default=["MODEL.WEIGHTS", "ckpts/Unified_learned_OCIM_RS200_6x+2x.pth"] ,
+    default=["MODEL.WEIGHTS", "./ckpts/Unified_learned_OCIM_RS200_6x+2x.pth"],
     nargs=argparse.REMAINDER,
 )
 
@@ -236,7 +230,7 @@ def write_masks_to_folder(masks: List[Dict[str, Any]], path: str) -> None:
         mask = mask_data["segmentation"]
         masks_array.append(mask.copy())
         filename = f"{i}.png"
-        cv2.imwrite(os.path.join(path, "sam_mask" ,filename), mask * 255)
+        cv2.imwrite(os.path.join(path, "sam_mask", filename), mask * 255)
         mask_metadata = [
             str(i),
             str(mask_data["area"]),
@@ -250,7 +244,7 @@ def write_masks_to_folder(masks: List[Dict[str, Any]], path: str) -> None:
         metadata.append(row)
 
     masks_array = np.stack(masks_array, axis=0)
-    np.save(os.path.join(path, "sam_mask" ,"masks.npy"), masks_array)
+    np.save(os.path.join(path, "sam_mask", "masks.npy"), masks_array)
     metadata_path = os.path.join(path, "sam_metadata.csv")
     with open(metadata_path, "w") as f:
         f.write("\n".join(metadata))
@@ -258,21 +252,19 @@ def write_masks_to_folder(masks: List[Dict[str, Any]], path: str) -> None:
 
 
 def create_logger(save_folder):
-    
+
     log_file = f"sam_process.log"
     final_log_file = os.path.join(save_folder, log_file)
 
     logging.basicConfig(
-        format=
-        '[%(asctime)s] [%(filename)s:%(lineno)d] [%(levelname)s] %(message)s',
+        format="[%(asctime)s] [%(filename)s:%(lineno)d] [%(levelname)s] %(message)s",
         level=logging.INFO,
-        handlers=[
-            logging.FileHandler(final_log_file, mode='w'),
-            logging.StreamHandler()
-        ])                        
+        handlers=[logging.FileHandler(final_log_file, mode="w"), logging.StreamHandler()],
+    )
     logger = logging.getLogger()
     print(f"Create Logger success in {final_log_file}")
     return logger
+
 
 def main(args: argparse.Namespace) -> None:
     print(args)
@@ -284,15 +276,13 @@ def main(args: argparse.Namespace) -> None:
     output_mode = "binary_mask"
     amg_kwargs = get_amg_kwargs(args)
     generator = SamAutomaticMaskGenerator(sam, output_mode=output_mode, **amg_kwargs)
-    
+
     assert args.data_root or args.img_path
     if args.img_path:
         targets = [args.img_path]
     else:
         img_folder = os.path.join(args.data_root, args.img_dir)
-        targets = [
-            f for f in os.listdir(img_folder) if not os.path.isdir(os.path.join(img_folder, f))
-        ]
+        targets = [f for f in os.listdir(img_folder) if not os.path.isdir(os.path.join(img_folder, f))]
         targets = [os.path.join(img_folder, f) for f in targets]
 
     for t in targets:
@@ -312,19 +302,39 @@ def main(args: argparse.Namespace) -> None:
     logger.info("sam done!\n")
 
     logger.info("running semantic seg model!")
-    semantic_predict(args.data_root, args.img_dir, args.ann_dir, args.semantic_config, args.options, args.aug_test, args.semantic_checkpoint, args.eval_options, args.output, args.color_list_path, args.img_path)
+    semantic_predict(
+        args.data_root,
+        args.img_dir,
+        args.ann_dir,
+        args.semantic_config,
+        args.options,
+        args.aug_test,
+        args.semantic_checkpoint,
+        args.eval_options,
+        args.output,
+        args.color_list_path,
+        args.img_path,
+    )
     logger.info("semantic predict done!\n")
 
     logger.info("running object detection model")
     object_detect(args)
     logger.info("object detection done!\n")
 
-
     logger.info("panoramic segmentation!")
-    panoramic_segment(args.output, args.category_txt, args.color_list_path, num_class=args.num_class, area_thr=args.area_thr, ratio_thr=args.ratio_thr, top_k=args.top_k)
+    panoramic_segment(
+        args.output,
+        args.category_txt,
+        args.color_list_path,
+        num_class=args.num_class,
+        area_thr=args.area_thr,
+        ratio_thr=args.ratio_thr,
+        top_k=args.top_k,
+    )
     logger.info("panoramic segmentation done!\n")
 
     logger.info("The results saved in {}!\n".format(args.output))
+
 
 if __name__ == "__main__":
     args = parser.parse_args()
